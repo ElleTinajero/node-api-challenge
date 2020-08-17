@@ -8,6 +8,13 @@ const port = 8000
 
 server.use(express.json())
 server.use(logger("long"))
+
+server.get("/", (req, res) => {
+    res.json({
+        message: "Server working!"
+    })
+})
+
 server.use(actionRouter)
 server.use(projectRouter)
 
